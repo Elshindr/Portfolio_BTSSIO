@@ -1,8 +1,18 @@
+# hidden files
+.*
+!.git*
+!.editorconfig
+!.nojekyll
+!.travis.yml
+
+# bundler cache
 _site
-.sass-cache
+vendor
+Gemfile.lock
+
+# rubygem
+*.gem
+
+# npm dependencies
 node_modules
-.DS_STORE
-.jekyll-cache
-.env
-.prettierignore
-.jekyll-metadata
+package-lock.json

@@ -3,7 +3,7 @@
 ## :space_invader: Bienvenue! 
 ### STAGE
 Le BTS SIO permet d'effectuer deux stages lors de la période de formation, de 4 à 6 semaines par an.
-You can use the [editor on GitHub](https://github.com/Elshindr/Portfolio_BTSSIO/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/Elshindr/Portfolio_BTSSIO/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
