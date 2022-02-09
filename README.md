@@ -3,38 +3,63 @@
 ## :space_invader: Bienvenue! 
 ### STAGE
 Le BTS SIO permet d'effectuer deux stages lors de la période de formation, de 4 à 6 semaines par an.
-You can use the [editor on GitHub](https://github.com/Elshindr/Portfolio_BTSSIO/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+E4 – Évaluation type
+Conseils
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Il est recommandé d’avoir consulté toutes les informations mises à votre disposition dans la présentation de cette épreuve et dans les ressources avant de soumettre votre dossier à l’évaluation.
 
-### Markdown
+Modalités et consignes
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Cette évaluation type consiste à préparer tous les éléments nécessaires pour l'épreuve E4 et à vous entraîner à la première partie de cette épreuve.
 
-```markdown
-Syntax highlighted code block
+Vous devez renseigner correctement votre portfolio, en particulier avec toutes les situations professionnelles vécues en stage, dans le cadre des ateliers de professionnalisation de votre parcours et éventuellement dans le cadre des séquences de formation, pour des missions pertinentes (afin de vous assurer que vous couvrez bien toutes les compétences du bloc 1).
+Situations professionnelles
+Chaque situation professionnelle doit être présentée sur une page séparée et doit contenir :
 
-# Header 1
-## Header 2
-### Header 3
+    une rapide description ainsi que les technologies concernées ;
+    le cadre de réalisation (stage, ateliers de professionnalisation (AP), …) ;
+    une vidéo de présentation (obligatoire lorsque celle-ci est demandée dans les missions, conseillée pour les autres situations professionnelles présentées car appréciée des jurys) ;
+    le lien vers le dépôt distant (obligatoire pour les SLAM pour mettre à disposition le code) ;
+    le lien vers le contexte (dans le cas des AP) ;
+    le lien vers un compte rendu détaillé et illustré (obligatoire pour toutes les situations professionnelles présentées) ;
 
-- Bulleted
-- List
+Le portfolio
+Le portfolio doit aussi présenter le ou les dispositifs mis en place pour la gestion de votre veille technologique, ainsi que votre CV contenant, entre autres, le lien vers votre compte LinkedIn (ou autre type de compte permettant de gérer votre identité professionnelle en ligne) et l'éventuelle liste des formations que vous avez suivies.
+Le tableau de synthèse
+Vous devez compléter le tableau de synthèse avec les situations professionnelles présentées dans le portfolio, et renseigner les compétences couvertes du bloc 1, de sorte que toutes les compétences soient abordées au moins une fois. Le tableau de synthèse doit aussi être accessible dans le portfolio, dans une page réservée à l'épreuve E4.
+La vidéo de présentation
 
-1. Numbered
-2. List
+Vous devez réaliser une vidéo de 10 minutes présentant votre parcours de professionnalisation et la justification des modalités d'acquisition des compétences du bloc 1 "Support et mise à disposition des services informatiques". Cette vidéo doit prendre appui soit directement sur le contenu de votre portfolio, soit sur un diaporama qui résumera votre parcours. Elle doit aussi exploiter le tableau de synthèse. Le but de cette vidéo est de vous entraîner à la première partie de l'épreuve E4 où normalement le jury vous laisse faire une présentation de 10 minutes.
 
-**Bold** and _Italic_ and `Code` text
+Dans le cadre de l'évaluation, vous insérerez aussi la vidéo (ou le lien vers la vidéo), dans la page de votre portfolio portant sur l'épreuve E4. Vous enlèverez la vidéo pour le passage de la véritable épreuve.
 
-[Link](url) and ![Image](src)
-```
+Vous devez donc envoyer à la correction un fichier word ou PDF contenant le lien vers la page du portfolio consacrée à l'épreuve E4. Le correcteur consultera aussi tout le reste du portfolio.
+Critères d'évaluation
+Portfolio
+(12 points)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+    Qualité globale de la présentation (pages harmonieuses, navigation facile, informations claires, rédaction sans faute d'orthographe ou de syntaxe).
+    Situations professionnelles clairement présentées et dont le contenu répond aux attentes.
+    Contenu technique et niveau des situations professionnelles en adéquation avec les attentes de l'examen.
+    Diversification des situations professionnelles.
+    CV dont le contenu répond aux attentes.
+    Présentation du ou des dispositifs mis en place pour gérer la veille technologique.
 
-### Jekyll Themes
+Tableau de synthèse
+(2 points)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Elshindr/Portfolio_BTSSIO/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    Description claire de chaque situation professionnelle.
+    Couverture totale des compétences du bloc 1.
 
-### Support or Contact
+En cas de non-couverture totale des compétences du bloc 1, le correcteur devra rappeler à l'étudiant qu'il risque une lourde pénalité à l'examen.
+Vidéo de présentation du parcours (10 minutes)
+(6 points)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+    Son et image de qualité.
+    Durée respectée.
+    Explications claires, présentées à un rythme correct.
+    Illustrations explicites pour aider à la compréhension.
+    Présentation de l'ensemble du parcours de façon cohérente.
+    Démonstration de la couverture des compétences du bloc 1.
+
+
