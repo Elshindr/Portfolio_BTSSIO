@@ -62,4 +62,5 @@ Vidéo de présentation du parcours (10 minutes)
     Présentation de l'ensemble du parcours de façon cohérente.
     Démonstration de la couverture des compétences du bloc 1.
 
-
+exemple type fourni
+https://leo-delsart.fr/Portefeuille-Competences
