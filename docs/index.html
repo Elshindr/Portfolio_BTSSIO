@@ -61,6 +61,13 @@ Have fun creating your portfolio on this template!!! -->
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <link 
+      rel="stylesheet" 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+      crossorigin="anonymous">
+
     <script src="./javascript/scrollreveal.min.js"></script>
     <script
       defer
@@ -68,34 +75,28 @@ Have fun creating your portfolio on this template!!! -->
       src="./javascript/scrollveal.js"
     ></script>
 
-    <!-- Remove Google Analytics once you have your portfolio website set-up -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-122228201-4");
-    </script>
-    <!-- End of Google Analytics -->
   </head>
   <body>
+    <!----nav section -->
+    <nav class="navbar fixed-top navbar-dark bg-dark manavbar">
+      <a  class="cta-btn text-color-main" href="#about" >Accueil</a> 
+      <a  class="cta-btn text-color-main" href="./lebts.html">BTS SIO</a> 
+      <a  class="cta-btn text-color-main" href="./projetpro.html">EPREUVE E4: Ateliers</a> 
+      <a  class="cta-btn text-color-main" href="./stage.html">EPREUVE E6: Stages</a> 
+      <a  class="cta-btn text-color-main" href="./veilles">VEILLES</a> 
+    </nav>
+    <!--- END nav section -->
+
     <!-- Hero Section -->
     <div id="hero">
       <section class="container">
         <h1 class="hero-title">
-          Bonjour! Je suis <span class="text-color-main name">MARIE Noeline</span>
-          <br />
-         Une étudiante en BTS SIO
-        </h1>
-        <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="#about">Get in touch</a>
+          Bonjour! Je suis <span class="text-color-main name">MARIE Noeline</span></h1>
+          <br /> 
+         <h2>Etudiante en BTS SIO, Solutions Logiciels et Applications Métiers</h2><br /> 
+        
+        <p class="hero-cta"><br /> 
+          <a class="cta-btn cta-btn--hero" href="#contact">Get in touch</a>
         </p>
       </section>
       <a href="#about" class="scroll-down-link" aria-label="scroll-down">
@@ -107,7 +108,7 @@ Have fun creating your portfolio on this template!!! -->
     <!-- About Section -->
     <section id="about">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">LE BTS SIO & Moi!</h2>
         <div class="row about-wrapper">
           <div class="about-wrapper__image">
             <img
@@ -118,10 +119,15 @@ Have fun creating your portfolio on this template!!! -->
           </div>
           <div class="about-wrapper__info">
             <p class="about-wrapper__info-text">
-              Le BTS SIO est ...
+              Le Brevet de Technicien Supérieur <emphase class="text-color-emphase">SIO</emphase>, pour Services Informatiques aux Organisations, est une formation en informatique qui se déroule sur deux années. 
+              Il s'agit ainsi d'un diplôme reconnu par l'Etat en tant que niveau <emphase class="text-color-emphase">BAC+2 </emphase> qui offre deux spécialités:
+               L'option <emphase class="text-color-emphase">SISR</emphase> qui se tourne vers des compétences accès réseaux et infrastructures. 
+               La seconde nommée <emphase class="text-color-emphase">SLAM</emphase> permet l'acquisition de compétences orientées développement de services logiciels et webs.
             </p>
             <p class="about-wrapper__info-text">
-              L'option SLAM est
+              Aimant créer des objets pratiques et me rendre utile pour autrui, mon choix s'est naturellement porté vers
+              la seconde option : <emphase class="text-color-emphase"> Solutions Logiciels et Applications Métiers</emphase>. Pour les passionnés de développement, cette spécialisation nous forme à
+              la création de logiciels, d'applications et de sites webs. De plus, de nombreux cours nous permettent acquérir les connaissances nécessaires à leurs élaborations dans une optique de qualité, autant pour d'autres contributeurs que les utilisateurs finaux.
             </p>
             <span class="about-wrapper__cta">
               <a href="https://raw.githubusercontent.com/Elshindr/Portfolio_BTSSIO/main/docs/assets/CV_BTS_Dev_Noeline_MARIE.pdf" class="cta-btn cta-btn--resume">View Resume</a>
@@ -141,7 +147,7 @@ Have fun creating your portfolio on this template!!! -->
           <!-- Each .row is a project -->
           <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">EPREUVE E4</h3>
+              <h3 class="project-wrapper__text-title">EPREUVE E4: </h3>
               <p class="project-wrapper__text-info">
                 Cette épreuve présente
               </p>
@@ -256,7 +262,7 @@ Have fun creating your portfolio on this template!!! -->
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Get in touch</h2>
         <div class="contact-wrapper">
           <p class="contact-wrapper__text">noeline.marie.dev@gmail.com</p>
           <a href="#" class="cta-btn cta-btn--resume">Call to Action</a>
@@ -279,6 +285,14 @@ Have fun creating your portfolio on this template!!! -->
             aria-label="linkedin"
           >
             <i class="fa fa-linkedin"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="twitter"
+          >
+            <i class="fa fa-twitter"></i>
           </a>
           <a
             href="https://github.com/Elshindr"

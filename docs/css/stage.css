@@ -44,7 +44,7 @@ a:hover {
     text-transform: uppercase
 }
 .text-color-emphase {
-    background-image: linear-gradient(135deg, #5c3064 0%, #9b5be5 100%);
+    background-image: linear-gradient(135deg, #5A9261 100%, #7FA212 0%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -70,7 +70,7 @@ a:hover {
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
     .text-color-main {
-        background-image: linear-gradient(135deg, #36dcc6 0%, #9b5be5 100%);
+        background-image: linear-gradient(135deg, #36dcc6 0%, #5A9261 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -117,7 +117,7 @@ a:hover {
     content: "";
     display: block;
     position: absolute;
-    background-image: linear-gradient(135deg, #36dcc6 0%, #9b5be5 100%);
+    background-image: linear-gradient(135deg, #5A9261 0%, #B0C700 100%);
     width: 0px;
     height: 100%;
     left: 0;
@@ -139,8 +139,8 @@ a:hover {
     color: #9b5be5;
     -webkit-text-fill-color: #9b5be5;
     border: 2px solid transparent;
-    -o-border-image: linear-gradient(135deg, #36dcc6 0%, #9b5be5 100%);
-    border-image: linear-gradient(135deg, #36dcc6 0%, #9b5be5 100%);
+    -o-border-image: linear-gradient(135deg, #B0C700 0%, #9b5be5 100%);
+    border-image: linear-gradient(135deg, #B0C700 0%, #9b5be5 100%);
     border-image-slice: 1
 }
 
@@ -205,14 +205,17 @@ screen and (-ms-high-contrast: none) {
 }
 
 .cta-btn--resume::after {
-    background: #fff
+    background: #5A9261;
+    color:#fff
 }
 
 .cta-btn--resume:hover {
     color: #9b5be5;
     text-decoration: none;
     -webkit-box-shadow: none;
-    box-shadow: none
+    box-shadow: none;
+    background: #5A9261;
+    color:#fff
 }
 
 @media (max-width: 37.5em) {
@@ -452,8 +455,8 @@ section .row span {
 }
 
 #about {
-    background-color: #36dcc0;
-    background-image: linear-gradient(135deg, #8433c7 0%, #5be5b0 100%);
+    background-color: #B0C700;
+    background-image: linear-gradient(135deg, #815C88 10%, #7d0d94 100%);
     color: #fff;
     height: 100%;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
