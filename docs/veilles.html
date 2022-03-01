@@ -1,41 +1,32 @@
-<!-- HELLO
--
-DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
-Created by Anil Seervi.
--
-GitHub repo: https://github.com/AnilSeervi/DevFolio
-README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
--
-Have fun creating your portfolio on this template!!! -->
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Title: add your Portfolio websites's title here -->
-    <title>Noeline MARIE | Portfolio BTS SIO</title>
+    <title>[Your name here] | Developer</title>
 
     <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[elshindr], [noeline], Portfolio BTS SIO, SLAM" />
+    <meta name="keywords" content="[username], [name], skill" />
 
     <!-- Improve your SEO by adding a small descrption of you -->
-    <meta name="description" content="Noeline MARIE | Portfolio BTS SIO, SLAM" />
+    <meta name="description" content="[Your name here] | Developer" />
 
     <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
     <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
 
     <!-- Add your primary-theme color for the value of content -->
-    <meta name="theme-color" content="purple" />
+    <meta name="theme-color" content="#36d1dc" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <!-- Fill content with the URL of this portfolio you'll host -->
     <meta property="og:url" content="https://devfolio.js.org/" />
     <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
-    <meta property="og:title" content="Noeline MARIE| Portfolio" />
+    <meta property="og:title" content="[Your name here] | Developer" />
     <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
     <meta property="og:description" content="Made using DevFolio Template" />
     <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
@@ -45,6 +36,13 @@ Have fun creating your portfolio on this template!!! -->
       content="https://devfolio.js.org/assets/devfolio.png"
     />
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- Again fill content attr with the URL of this portfolio you'll host -->
+    <meta property="twitter:url" content="https://devfolio.js.org" />
+    <!-- Recommended to use the same text used within <title> element -->
+    <meta property="twitter:title" content="[Your name here] | Developer" />
+    <!-- short description that shows up while your portfolio is shared -->
     <meta
       property="twitter:description"
       content="Made using DevFolio Template"
@@ -55,43 +53,58 @@ Have fun creating your portfolio on this template!!! -->
       content="https://anilseervi.vercel.app/assets/devfolio.png"
     />
 
-     <!-- link tags -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- link tags -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+   
+    <script src="./javascript/scrollreveal.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="./javascript/scrollveal.js"
+    ></script>
 
-     <link rel="stylesheet" href="./css/main.css" />
-     <link
-       rel="stylesheet"
-       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-     />
-    
-     <script src="./javascript/scrollreveal.min.js"></script>
-     <script
-       defer type="text/javascript"
-       src="./javascript/scrollveal.js"
-     ></script>
- 
+    <!-- Remove Google Analytics once you have your portfolio website set-up -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "UA-122228201-4");
+    </script>
+    <!-- End of Google Analytics -->
   </head>
   <body>
-    <!----nav section -->
-    <nav class="navbar fixed-top navbar-dark bg-dark">
-      <a  class="cta-btn text-color-nav " href="#about">HOME</a> 
-      <a  class="cta-btn text-color-nav" href="./projetpro.html">EPREUVE E4: Ateliers</a> 
-      <a  class="cta-btn text-color-nav" href="./stage.html">EPREUVE E6: Stages</a> 
-      <a  class="cta-btn text-color-nav" href="./veilles.html">VEILLES</a> 
-    </nav>
-    <!--- END nav section -->
-
+        <!----nav section -->
+        <nav class="navbar fixed-top navbar-dark bg-dark manavbar">
+          <a class="cta-btn text-color-nav" href="./index.html">HOME</a>
+          <a class="cta-btn text-color-nav" href="./projetpro.html">EPREUVE E4: Ateliers Pro</a>
+          <a class="cta-btn text-color-nav" href="./stage.html">EPREUVE E6: Stages</a>
+          <a class="cta-btn text-color-nav" href="#about">VEILLES</a>
+        </nav>
+        <!--- /END nav section -->
     <!-- Hero Section -->
     <div id="hero">
       <section class="container">
         <h1 class="hero-title">
-          Bonjour! Je suis <span class="text-color-main name">MARIE Noeline</span></h1>
-          <br /> 
-         <h2>Etudiante en BTS SIO, Solutions Logiciels et Applications Métiers</h2><br /> 
-        
-        <p class="hero-cta"><br /> 
-          <a class="cta-btn cta-btn--hero" href="#contact">Get in touch</a>
+          Mes <span class="text-color-main name">Veilles</span>
+          <br />
+          <h2>Voici l'ensemble des informations concernant mes différentes veilles
+            mise en place lors de ma formation.</h2>
+        </h1>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="#about">Let's see</a>
         </p>
       </section>
       <a href="#about" class="scroll-down-link" aria-label="scroll-down">
@@ -103,29 +116,35 @@ Have fun creating your portfolio on this template!!! -->
     <!-- About Section -->
     <section id="about">
       <div class="container">
-        <h2 class="section-title">LE BTS SIO & Moi!</h2>
+        <h2 class="section-title">About Me</h2>
         <div class="row about-wrapper">
           <div class="about-wrapper__image">
             <img
               class="img-fluid"
-              src="./assets/profile.png"
+              src="./assets/rgpd-image.jpg"
               alt="Profile Image"
             />
+            <img
+            class="img-fluid"
+            src="./assets/secNum-image.png"
+            alt="Profile Image"
+          />
           </div>
           <div class="about-wrapper__info">
             <p class="about-wrapper__info-text">
-              Le Brevet de Technicien Supérieur <emphase class="text-color-emphase">SIO</emphase>, pour Services Informatiques aux Organisations, est une formation en informatique qui se déroule sur deux années. 
-              Il s'agit ainsi d'un diplôme reconnu par l'Etat en tant que niveau <emphase class="text-color-emphase">BAC+2 </emphase> qui offre deux spécialités:
-               L'option <emphase class="text-color-emphase">SISR</emphase> qui se tourne vers des compétences accès réseaux et infrastructures. 
-               La seconde nommée <emphase class="text-color-emphase">SLAM</emphase> permet l'acquisition de compétences orientées développement de services logiciels et webs.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Temporibus quae repellat, ad omnis distinctio velit saepe expedita
+              architecto cumque veritatis adipisci. Sapiente non, saepe hic
+              adipisci doloribus quisquam recusandae et.
             </p>
             <p class="about-wrapper__info-text">
-              Aimant créer des objets pratiques et me rendre utile pour autrui, mon choix s'est naturellement porté vers
-              la seconde option : <emphase class="text-color-emphase"> Solutions Logiciels et Applications Métiers</emphase>. Pour les passionnés de développement, cette spécialisation nous forme à
-              la création de logiciels, d'applications et de sites webs. De plus, de nombreux cours nous permettent acquérir les connaissances nécessaires à leurs élaborations dans une optique de qualité, autant pour d'autres contributeurs que les utilisateurs finaux.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+              obcaecati doloribus qui praesentium quae veniam esse mollitia
+              consequuntur nisi minima quasi et fugit quidem enim recusandae
+              delectus, iusto culpa rerum?
             </p>
             <span class="about-wrapper__cta">
-              <a href="https://raw.githubusercontent.com/Elshindr/Portfolio_BTSSIO/main/docs/assets/CV_BTS_Dev_Noeline_MARIE.pdf" class="cta-btn cta-btn--resume">View Resume</a>
+              <a href="#" class="cta-btn cta-btn--resume">View Resume</a>
             </span>
           </div>
         </div>
@@ -137,28 +156,28 @@ Have fun creating your portfolio on this template!!! -->
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">EPREUVES</h2>
+          <h2 class="section-title dark-blue-text">Projects</h2>
 
           <!-- Each .row is a project -->
           <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">EPREUVE E4: Ateliers Professionnels</h3>
+              <h3 class="project-wrapper__text-title">Project Title</h3>
               <p class="project-wrapper__text-info">
-                Cette épreuve présente
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
+                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
+                sint saepe nostrum! Enim, perferendis.
               </p>
               <div class="project-wrapper__text-btns">
                 <a
-                  href="./projetpro.html"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="cta-btn cta-btn--hero cta-btn--projects"
                   >See Live</a
-                >
-                <a href="https://github.com/Elshindr/Android_MediaTek86Formations" target="_blank" class="cta-btn text-color-main"
-                  >Code Source Application Android</a
                 >
                 <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Code Source Application C#</a
+                  >Source Code</a
                 >
               </div>
             </div>
@@ -167,7 +186,7 @@ Have fun creating your portfolio on this template!!! -->
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <div class="thumbnail rounded">
                   <img
-                    src="./assets/ImagesApplication.PNG"
+                    src="./assets/project.png"
                     class="img-fluid"
                     alt="Project Image"
                   />
@@ -180,18 +199,24 @@ Have fun creating your portfolio on this template!!! -->
           <!-- Each .row is a project -->
           <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Epreuve E6: Stages</h3>
+              <h3 class="project-wrapper__text-title">Project Title</h3>
               <p class="project-wrapper__text-info">
-                Mes sujets et missions de stage chez Aroma-Zone.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
+                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
+                sint saepe nostrum! Enim, perferendis.
               </p>
               <div class="project-wrapper__text-btns">
                 <a
-                  href="./stage.html"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="cta-btn cta-btn--hero cta-btn--projects"
                   >See Live</a
                 >
+                <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
               </div>
             </div>
 
@@ -199,7 +224,7 @@ Have fun creating your portfolio on this template!!! -->
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <div class="thumbnail rounded">
                   <img
-                    src="./assets/proxy-image.png"
+                    src="./assets/project.png"
                     class="img-fluid"
                     alt="Project Image"
                   />
@@ -212,7 +237,7 @@ Have fun creating your portfolio on this template!!! -->
           <!-- Each .row is a project -->
           <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Veilles Professionnelles</h3>
+              <h3 class="project-wrapper__text-title">Project Title</h3>
               <p class="project-wrapper__text-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
@@ -254,9 +279,9 @@ Have fun creating your portfolio on this template!!! -->
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Get in touch</h2>
+        <h2 class="section-title">Contact</h2>
         <div class="contact-wrapper">
-          <p class="contact-wrapper__text">noeline.marie.dev@gmail.com</p>
+          <p class="contact-wrapper__text">[Put your call to action here]</p>
           <a href="#" class="cta-btn cta-btn--resume">Call to Action</a>
         </div>
       </div>
@@ -265,7 +290,7 @@ Have fun creating your portfolio on this template!!! -->
 
     <!-- Footer Section -->
     <footer class="footer">
-      <div class="container ">
+      <div class="container">
         <a href="#hero" class="back-to-top" aria-label="go back to top">
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
@@ -324,7 +349,7 @@ Have fun creating your portfolio on this template!!! -->
       </div>
     </footer>
     <!-- END Footer Section -->
-    
+
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
