@@ -729,9 +729,13 @@ section .row span {
         margin-bottom: 0rem
     }
 }
-
-#projects .project-wrapper .row {
+.PRO_project-wrapper__info-text{
     display: inline-flex;
+}
+
+
+.PRO_project-wrapper, #projects .project-wrapper .row {
+    
     margin: 0;
     margin-bottom: 8rem
 }
@@ -742,7 +746,7 @@ section .row span {
     }
 }
 
-#projects .project-wrapper__text {
+.PRO_project-wrapper, #projects .project-wrapper__text {
     width: 100%;
     text-align: justify
 }
