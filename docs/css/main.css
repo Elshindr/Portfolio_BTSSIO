@@ -464,6 +464,7 @@ section .row span {
 }
 
 #aboutAZ, #about .about-wrapper__image {
+    background-color: transparent;
     display: flex;
     height: 100%;
     align-items: center;
