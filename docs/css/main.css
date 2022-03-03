@@ -32,8 +32,7 @@ h1 {
 
 .list-group {
    
-    
-    color: purple
+    color: #745be5
 }
 .list-group-item{
     font-size: 1.6rem;
@@ -43,7 +42,9 @@ h1 {
     -webkit-text-fill-color: transparent;
     color: transparent
 }
-
+.col{
+    padding: 4.5rem;
+}
 p,
 a {
     font-size: 1.6rem
@@ -52,7 +53,10 @@ a {
 a {
     text-decoration: none
 }
-
+.col-1{
+    margin: 4.5rem;
+    padding: 4.5rem;
+}
 a:hover {
     transition: all 0.3s ease-in-out
 }
@@ -75,12 +79,12 @@ a:hover {
 
 .text-color-main {
     margin-left: 1rem;
-    color: #702494;
-    -webkit-text-fill-color:#702494
+    color: #745be5;
+    -webkit-text-fill-color:#745be5
 }
 
 input[type="text"] #form-control{
-    color: purple;
+    color: #745be5;
 }
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -97,7 +101,7 @@ input[type="text"] #form-control{
     .text-color-main {
         margin: 0;
         background-image: none;
-        -webkit-text-fill-color: #702494;
+        -webkit-text-fill-color: #745be5;
         box-shadow: none
     }
 }
@@ -144,7 +148,7 @@ input[type="text"] #form-control{
         background-image: none
     }
 }
-cta-btn--AZ{
+.cta-btn--AZ{
     color: #702494;
     -webkit-text-fill-color: #702494;
     border: 2px solid transparent;
@@ -172,7 +176,7 @@ cta-btn--AZ{
 @media screen and (-ms-high-contrast: active),
 screen and (-ms-high-contrast: none) {
     .cta-btn--hero {
-        color: #702494
+        color: #745be5
     }
 
     .cta-btn--hero:hover {
@@ -183,9 +187,9 @@ screen and (-ms-high-contrast: none) {
 @media (max-width: 37.5em) {
     .cta-btn--hero {
         background-image: none;
-        border: 2px solid #8433c7;
+        border: 2px solid #745be5;
         box-shadow: none;
-        -webkit-text-fill-color: #8433c7
+        -webkit-text-fill-color: #745be5
     }
 }
 
@@ -210,18 +214,25 @@ screen and (-ms-high-contrast: none) {
     transform: translate(-9%, -25%) rotate(45deg)
 }
 
-.cta-btn--resume {
+.cta-btn--resumeAZ,.cta-btn--resume {
     border-radius: 0;
     color: #fff;
     border: 2px solid #fff
 }
 
-.cta-btn--resume::after {
+.cta-btn--resumeAZ::after, .cta-btn--resume::after {
     background: #fff
 }
 
 .cta-btn--resume:hover {
-    color: #8433c7;
+    color: #702494;
+    text-decoration: none;
+    box-shadow: none
+}
+
+.cta-btn--resumeAZ:hover {
+    color: #79ac1c;
+    background: #fff;
     text-decoration: none;
     box-shadow: none
 }
@@ -419,7 +430,7 @@ section .row span {
     }
 }
 #aboutAZ{
-    background-image: linear-gradient(135deg, #722d7c 0%, #9d6aa5 50%,#9e8d86 100%);
+    background-image: linear-gradient(135deg, #5b2164 0%, #92589b 50%,#9d6aa5 100%);
     color: #fff;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -459,24 +470,25 @@ section .row span {
     justify-content: center
 }
 
-#about .about-wrapper__image img {
+ #about .about-wrapper__image img {
     max-width: 350px;
-    width: 100%
+    width: 100%;
+    border-radius: 50%
 }
 
 @media (max-width: 75em) {
-    #about .about-wrapper__image {
+    #aboutAZ, #about .about-wrapper__image {
         height: 100%
     }
 }
 
 @media (max-width: 48em) {
-    #about .about-wrapper__image {
+    #aboutAZ, #about .about-wrapper__image {
         padding-bottom: 4rem
     }
 }
 
-#about .about-wrapper__info {
+#aboutAZ, #about .about-wrapper__info {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -718,6 +730,7 @@ section .row span {
 }
 
 #projects .project-wrapper .row {
+    display: inline-flex;
     margin: 0;
     margin-bottom: 8rem
 }
