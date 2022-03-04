@@ -19,6 +19,15 @@ WHERE codeBoutique = ? AND date = ?
 SELECT  * FROM [A$]
 WHERE codeBoutique = ? AND date = ?
 
+CREATE TABLE pos_account_book(
+	pos_code NVARCHAR(5),
+	pos_location NVARCHAR(10),
+	erp_code NVARCHAR(10),
+	wms_code VARCHAR(35) NOT NULL,
+	pos_name VARCHAR(50)NOT NULL,
+	store_id VARCHAR(2)NOT NULL,
+	ctrl_bio NUMERIC(3.0)
+)
 
 CREATE TABLE pos_accountbook_importX3
 (
