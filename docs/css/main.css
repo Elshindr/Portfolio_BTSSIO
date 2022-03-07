@@ -30,17 +30,15 @@ h1 {
     font-weight: 700
 }
 
-.list-group {
-   
-    color: #745be5
-}
+
 .list-group-item{
     font-size: 1.6rem;
     background-color:  #fff;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent
+    -webkit-text-fill-color: #702494;
+    
+
 }
 .col{
     padding: 4.5rem;
