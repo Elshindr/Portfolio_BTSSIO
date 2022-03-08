@@ -40,6 +40,9 @@ h1 {
     
 
 }
+.list-light{
+    -webkit-text-fill-color: #fff;
+}
 .col{
     padding: 4.5rem;
 }
