@@ -1,0 +1,592 @@
+
+class FtMapper
+{
+
+    protected  $slug ='/info/'.[customer_index][node][path];
+    protected $adapter_azr,
+        $adapter_api,
+        $config,
+        $result,
+        $DrupalStructure = array(),
+        $Etiquettes_other,
+        $Etiquettes_null,
+        $Etiquettes_none,
+        $data_gather,
+        $data_gather_data,
+        $data_couchDb,
+        $data_drupal_term_property,
+        $data_drupal_term_inpratice;
+
+    const DRUPAL_STRUCTURE_WHERE_NONE  = ['ndfi.type_name' => 'fiche_technique', 'parent' => ''];
+    const DRUPAL_STRUCTURE_WHERE_NULL  = ['ndfi.type_name' => 'fiche_technique', 'parent' => null];
+    const DRUPAL_STRUCTURE_WHERE_OTHER = ['ndfi.type_name' => 'fiche_technique', 'parent != \'\''];
+
+    const property_bloc_caract = 'field_ft_caracteristique';
+    const property_bloc_propr = 'field_ft_propriete';
+    const property_bloc_proprdesc = 'field_ft_desc_propriete';
+    const property_bloc_proprWeight = 'field_ft_prop_weight';
+
+    const PRESENTATION_FT_PRES = 'presentation_ft_pres';
+    const INPRATICE_FT_PICTO = 'inpratice_ft_picto';
+    const INPRATICE_FT_PICTO_HE = 'inpratice_ft_picto_he';
+
+    /**
+     * Constructeur du WS Ft Fiche Technique
+     */
+    public function __construct($config, AdapterInterface $adapter_azr, AdapterInterface $adapter_api){
+
+        $getconfig = new Config($config);
+        $this->config = $getconfig->getConfig('couchdb');
+
+        $this->adapter_azr = $adapter_azr;
+        $this->adapter_api = $adapter_api;
+    }
+
+
+
+    public function fetchAll($param){
+        if(isset($param)){
+            $this->result = $this->get(null, $param);
+        }
+        return $this->result;
+    }
+
+
+    /**
+     * Methode Principal de gestion des données
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function fetchOne($id)
+    {
+        if(isset($id)){
+
+            ///
+            // Get Drupal structure like
+            $this->Etiquettes_none  = iterator_to_array($this->selectStructureDrupal(self::DRUPAL_STRUCTURE_WHERE_NONE));
+            $this->Etiquettes_null  = iterator_to_array($this->selectStructureDrupal(self::DRUPAL_STRUCTURE_WHERE_NULL));
+            $this->Etiquettes_other = iterator_to_array($this->selectStructureDrupal(self::DRUPAL_STRUCTURE_WHERE_OTHER));
+            $this->DrupalStructure  = $this->makeDrupalStructure();
+
+            // Get Drupal terms
+            $this->data_drupal_term_property = iterator_to_array($this->selectDrupalTermData(4));
+            $this->data_drupal_term_inpratice = iterator_to_array($this->selectDrupalTermData(3));
+
+            // Get data_drupal_term as associative array
+            $this->data_drupal_term_property = $this->getAssociativeArray($this->data_drupal_term_property);
+            $this->data_drupal_term_inpratice = $this->getAssociativeArray($this->data_drupal_term_inpratice);
+
+
+            ///
+            // Get Data from CouchDb product
+            $this->data_couchDb =  $this->get($id, null);
+            if($this->data_couchDb instanceof ApiProblem){
+                return $this->data_couchDb;
+            }
+
+            $this->data_couchDb=  $this->get($id, null);
+
+            $data_drupal_sku = $this->data_couchDb['sku'];
+            $this->combine_structure_presentation();
+            $this->combine_structure_property();
+            $this->combine_structure_inpratice();
+
+
+            // IF HE
+            // Get one Data from API gather with sku
+            $this->data_gather = $this->selectOneDataGather($data_drupal_sku);
+            $this->data_gather = $this->selectOneDataGather($data_drupal_sku);
+
+            if($this->data_gather != null){
+                //var_dump('HE');
+                $this->data_gather = iterator_to_array($this->data_gather);
+                foreach($this->data_gather as $item){
+                    $gather_ar = $item;
+                }
+                $this->data_gather_data = Json::decode($gather_ar['data'], true);
+
+                $this->toFix_presentation();
+                $this->toFix_property();
+                $this->toFix_inpratice();
+            }
+
+            ///
+            // Combine Couchdb with Structure
+             $combine_structure_couchdb = $this->combine_structure_couchdb();
+
+            // Combine Structure with gather
+            if(isset($gather_ar['data'])){
+
+            }
+
+
+            unset($this->data_couchDb['_id'],$this->data_couchDb['_rev']);
+            return  $this->data_couchDb;
+        }
+        return "id not found" ;
+    }
+
+    protected function combine_structure_presentation(){
+        $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES] = array(
+            'presentation_bloc_image' => !empty($this->data_couchDb['custom_index_data']['node']['picture']) ? $this->data_couchDb['custom_index_data']['node']['picture']: '',
+            'presentation_bloc_intro' => !empty($this->data_couchDb['custom_index_data']['node']['field_ft_introduction']) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_introduction'][0]): '',
+            'presentation_bloc_accroche' => '',
+            'presentation_bloc_odeur' => !empty($this->data_couchDb['custom_index_data']['node']['field_ft_odeur']) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_odeur'][0]): '',
+            'presentation_bloc_chemotype' => !empty($this->data_couchDb['custom_index_data']['node']['field_ft_chemotype']) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_chemotype'][0]): '',
+            'presentation_bloc_botanique' => !empty($this->data_couchDb['custom_index_data']['node']['field_ft_nom_botanique']) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_nom_botanique'][0]): '',
+            'presentation_bloc_plantepart' => !empty($this->data_couchDb['custom_index_data']['node']['field_ft_partie_plante_use']) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_partie_plante_use'][0]): '',
+
+        ) ;
+
+        unset(
+            $this->data_couchDb['custom_index_data']['node']['picture'],
+            $this->data_couchDb['custom_index_data']['node']['field_ft_introduction']['value'],
+            $this->data_couchDb['custom_index_data']['node']['field_ft_odeur'],
+            $this->data_couchDb['custom_index_data']['node']['field_ft_chemotype'],
+            $this->data_couchDb['custom_index_data']['node']['field_ft_nom_botanique'],
+            $this->data_couchDb['custom_index_data']['node']['field_ft_partie_plante_use']['value']
+        );
+    }
+    protected function toFix_presentation(){
+
+        $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES] = array(
+            'presentation_bloc_image' => !empty($this->data_gather_data['Intro']['IMAGE']) ? $this->data_gather_data['Intro']['IMAGE'] : $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES]['presentation_bloc_image'],
+            'presentation_bloc_intro' => !empty($this->data_gather_data['Intro']['Intro']) ? $this->data_gather_data['Intro']['Intro'] : $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES]['presentation_bloc_intro'],
+            'presentation_bloc_accroche' => !empty($this->data_gather_data['Intro']['Accroche']) ? $this->data_gather_data['Intro']['Accroche'] : '',
+            'presentation_bloc_odeur' => !empty($this->data_gather_data['Intro']['Odeur']) ? $this->data_gather_data['Intro']['Odeur']: $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES]['presentation_bloc_odeur'],
+            'presentation_bloc_chemotype' => !empty($this->data_gather_data['Intro']['Chémotype']) ? $this->data_gather_data['Intro']['Chémotype']: $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES]['presentation_bloc_chemotype'],
+            'presentation_bloc_botanique' => !empty($this->data_gather_data['Intro']['Nom botanique']) ? $this->data_gather_data['Intro']['Nom botanique']: $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES]['presentation_bloc_botanique'],
+            'presentation_bloc_plantepart' => !empty($this->data_gather_data['Intro']['Partie de la plante utilisée']) ? $this->data_gather_data['Intro']['Partie de la plante utilisée']:  $this->data_couchDb['custom_index_data']['node'][self::PRESENTATION_FT_PRES]['presentation_bloc_plantepart'],
+
+        ) ;
+
+    }
+
+    protected function combine_structure_property(){
+        $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'] = array();
+
+        foreach ($this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprdesc]  as $key => $value){
+           if(!empty($value)){
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key] = array(
+                    'property_bloc_caract' =>  array(
+                        'property_bloc_term_value' =>  !empty($this->data_couchDb['custom_index_data']['node'][self::property_bloc_caract][$key]) ?  implode($this->data_couchDb['custom_index_data']['node'][self::property_bloc_caract][$key]): '',
+                        'property_bloc_term_label' => $this->data_drupal_term_property[implode($this->data_couchDb['custom_index_data']['node'][self::property_bloc_caract][$key])],
+                        'property_bloc_couleur' => '',
+                        'property_bloc_title' => '',
+                        'property_bloc_proprietes' => '',
+                        'property_bloc_utilisation' => '',
+                        ),
+                    'property_bloc_propr' => !empty($this->data_couchDb['custom_index_data']['node'][self::property_bloc_propr][$key]) ? $this->data_couchDb['custom_index_data']['node'][self::property_bloc_propr][$key]: '',
+                    'property_bloc_proprdesc' => !empty($this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprdesc][$key]) ? $this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprdesc][$key]: '',
+                    'property_bloc_proprWeight' => !empty($this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprWeight][$key]) ? $this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprWeight][$key]: '',
+                ) ;
+
+           }
+            unset($this->data_couchDb['custom_index_data']['node'][self::property_bloc_caract][$key],$this->data_couchDb['custom_index_data']['node'][self::property_bloc_propr][$key], $this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprdesc][$key],$this->data_couchDb['custom_index_data']['node'][self::property_bloc_proprWeight][$key]);
+        }
+    }
+    protected function toFix_property(){
+    foreach($this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'] as $key => $value) {
+
+        $name = $this->data_drupal_term_property[$this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_term_value']];
+
+        if ($name != 'Intro' && $name != 'Pictos' && $name != 'Précautions') {
+
+            // BLOC SANTE
+            if('Bloc '.$name == 'Bloc Santé'){
+
+                if ($this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_propr']['value'] == 'proprietes') {
+                    $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_proprdesc']['value'] = $this->data_gather_data['Bloc '.$name ]['Propriétés '.$name];
+                }
+
+                else if ($this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_propr']['value'] == 'utilisations') {
+                    $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_proprdesc']['value'] = $this->data_gather_data['Bloc '.$name ]['Utilisations '.$name];
+                }
+                else{
+                    $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_propr']['value'] = $this->data_gather_data['Bloc '.$name ]['Propriétés '.$name];
+                    $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_proprdesc']['value'] = $this->data_gather_data['Bloc '.$name ]['Utilisations '.$name];
+                }
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_couleur'] = Html::filterHtml($this->data_gather_data['Bloc '.$name]['Couleur']);
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_title'] = $this->data_gather_data['Bloc '.$name]['Titre '.$name];
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_proprietes'] = $this->data_gather_data['Bloc '.$name]['Propriétés '.$name];
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_utilisation'] = $this->data_gather_data['Bloc '.$name]['Utilisations '.$name];
+            }
+            // BLOC MAISON CUISINE BIEN-ETRE BEAUTE
+            else if(isset($this->data_gather_data['Bloc '.$name])){
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_couleur'] = Html::filterHtml($this->data_gather_data['Bloc '.$name]['Couleur']);
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_title'] = $this->data_gather_data['Bloc '.$name]['Titre '.$name];
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_proprietes'] = $this->data_gather_data['Bloc '.$name]['Propriétés '.$name];
+                $this->data_couchDb['custom_index_data']['node']['ft_proprietes_multi'][$key]['property_bloc_caract']['property_bloc_utilisation'] = $this->data_gather_data['Bloc '.$name]['Utilisations '.$name];
+            }
+        }
+    }
+}
+
+
+    protected function combine_structure_inpratice(){
+        $this->data_couchDb['custom_index_data']['node']['inpratice_bloc_pictogramme'] = array();
+
+        foreach ($this->data_couchDb['custom_index_data']['node']['field_ft_picto_mode_util']  as $key => $value ){
+            if(!empty($value)){
+                $this->data_couchDb['custom_index_data']['node']['inpratice_bloc_pictogramme'][$key] = array(
+                    self::INPRATICE_FT_PICTO=> array(
+                        'inpratice_bloc_term_label' => $this->data_drupal_term_inpratice[implode($this->data_couchDb['custom_index_data']['node']['field_ft_picto_mode_util'][$key])],
+                        'inpratice_bloc_picto_mode_util' =>  !empty($this->data_couchDb['custom_index_data']['node']['field_ft_picto_mode_util'][$key]) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_picto_mode_util'][$key]): '',
+                        'inpratice_bloc_ponderation' => !empty($this->data_couchDb['custom_index_data']['node']['field_ft_ponderation'][$key]) ? implode($this->data_couchDb['custom_index_data']['node']['field_ft_ponderation'][$key]): '',
+                         ),
+                    self::INPRATICE_FT_PICTO_HE => array(
+                        'inpratice_bloc_picto_label'=> '',
+                        'inpratice_bloc_picto_ponderation' => ''
+                    )
+                ) ;
+            }
+        }
+        unset($this->data_couchDb['custom_index_data']['node']['field_ft_picto_mode_util'],$this->data_couchDb['custom_index_data']['node']['field_ft_ponderation'] );
+    }
+    protected function toFix_inpratice(){
+        foreach ($this->data_couchDb['custom_index_data']['node']['inpratice_bloc_pictogramme'] as $key => $value) {
+            foreach ($this->data_gather_data['Pictos'] as $key_p => $value_p){
+                if($key_p == $this->data_couchDb['custom_index_data']['node']['inpratice_bloc_pictogramme'][$key][self::INPRATICE_FT_PICTO]['inpratice_bloc_term_label'] ){
+                    $this->data_couchDb['custom_index_data']['node']['inpratice_bloc_pictogramme'][$key][self::INPRATICE_FT_PICTO_HE]['inpratice_bloc_picto_label'] = $key_p ;
+                    $this->data_couchDb['custom_index_data']['node']['inpratice_bloc_pictogramme'][$key][self::INPRATICE_FT_PICTO_HE]['inpratice_bloc_picto_ponderation']= $value_p;
+                }
+            }
+        }
+    }
+
+    protected function combine_structure_couchdb(){
+        $this->data_couchDb;
+        $this->DrupalStructure;
+        $bloc1 =array();
+
+        unset($this->data_couchDb['_id'],$this->data_couchDb['_rev']);
+        //var_dump($this->data_couchDb['custom_index_data']['node']);
+        foreach ($this->data_couchDb['custom_index_data']['node'] as $key_db => $value_db){
+
+            //var_dump($key_db);
+
+            if($key_db == self::PRESENTATION_FT_PRES){
+                    //var_dump($key_db);
+            }
+            foreach($this->DrupalStructure as $key_stru => $value_stru) {
+
+
+                if ($key_db == $value_stru['field_name']) {
+
+                    $this->data_couchDb[$key_db]['drupal_structure_'.$key_db] = array(
+                        'couchdb_'.$key_db => $value_db,
+                        'drupal_struct' => $value_stru,
+
+                    );
+
+                    break;
+                }
+
+
+
+                /*
+                if(is_array($value_db)){
+                    die('array');
+                }*/
+
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * Method to make Drupal like structure with selected arrays
+     *
+     * @return array
+     */
+    protected function makeDrupalStructure(){
+
+        $tree = array();
+        $_tree = array();
+
+        $remove_other = $this->Etiquettes_other;
+        $index_weight_grp = 0;
+        $index_weight_node = 0;
+
+        $old_weight=$this->Etiquettes_none['ndfiWeight'] ;
+
+        /** Make not null parent structure */
+        foreach($this->Etiquettes_none as $key){
+            if($old_weight != $key['gpWeight']){
+                $index_weight_node = $key['ndfiWeight'];
+                $old_weight = $key['gpWeight'] ;
+            }
+
+            if($key['ndfiWeight']!= $index_weight_node ){
+
+                foreach ($this->Etiquettes_other as $keya ){
+                    if($keya['parent'] == $key['group_name'] && $keya['gpWeight'] == $index_weight_node)
+                    {
+                        array_push($tree,  $keya);
+                        unset($remove_other[array_search($keya,$remove_other)]);
+                    }
+                }
+                $index_weight_node++;
+            }
+
+            array_push($tree, $key);
+            $index_weight_node++;
+        }
+
+        /** Get other not find */
+        foreach($tree as $key){
+            foreach ($remove_other as $keyo) {
+                if ($keyo['parent'] == $key['group_name'] ) {
+                    array_push($_tree, $keyo);
+                    unset($remove_other[array_search($keyo,$remove_other)]);
+                }
+            }
+        }
+
+
+        /** Make null parent structure*/
+        $__tree=array();
+        foreach($this->Etiquettes_null as $key){
+            // initialisation field
+            // nome de la fiche
+            // ingrédient
+
+            // visuel ambiance
+
+            // taxonomie
+            // Paramètres du menu
+            // information de publication
+
+            //Informations sur les révisions
+            // option de publication
+            //paramètres des commentaires
+            array_push($__tree,  $key);
+            // insert meta tag
+            // insert path settings
+            // insert printer, email and PDF versions
+        }
+
+
+        /** Combine Drupal Structure */
+        array_push( $__tree, $tree, $_tree);
+        //foreach ($__tree as $i){
+        //    var_dump($i);
+        //}
+        //var_dump($__tree[0]);die('end');
+        return $__tree;
+
+    }
+
+    protected function selectDrupalTermData($vid){
+        $db = $this->adapter_azr;
+
+        $sql = new Sql($db);
+
+        $select = new Select(array('drtd'=>'drupal_term_data'));
+        $select->columns(array(
+                'tid',
+                'name'
+            )
+        )
+            ->where('vid ='.$vid)
+            ->order(['weight ASC']);
+
+
+        $statement = $sql->prepareStatementForSqlObject($select);
+        $results = $statement->execute();
+
+
+        if ($results->isQueryResult()){
+            return $results;
+        }
+        else{
+            return new ApiProblem(404, 'Not found');
+        }
+    }
+
+    /**
+     * Method to get structure from drupal
+     * MySQL select
+     *
+     * @param $DrupalStructure_Where
+     * @return ApiProblem
+     */
+    protected function selectStructureDrupal($DrupalStructure_Where){
+        $db = $this->adapter_azr;
+
+        $sql = new Sql($db);
+
+        $select = new Select(array('ndfi'=>'drupal_content_node_field_instance'));
+        $select->columns(array(
+                'field_name',
+                'type_name',
+                'ndfilabel'=>'label',
+                'widget_type',
+                'description',
+                'widget_module',
+                'ndfiWeight'=> 'weight'
+            )
+        )
+            ->join(
+                array('ndf'=>'drupal_content_node_field'),
+                'ndfi.field_name = ndf.field_name',
+                array('type', 'module')
+            )
+            ->join(
+                array('gpF'=> 'drupal_content_group_fields'),
+                'ndfi.field_name = gpF.field_name',
+                array('group_name'),
+                Select::JOIN_LEFT
+            )
+            ->join(
+                array('gp'=> 'drupal_content_group'),
+                'gpF.group_name = gp.group_name',
+                array('group_type',
+                    'parent',
+                    'gpLabel'=>'label' ,
+                    'gpWeight'=>'weight'
+                ),
+                Select::JOIN_LEFT
+            )
+            ->where($DrupalStructure_Where)
+            ->order(['gp.weight ASC','ndfi.weight ASC', 'gp.label ASC', 'parent ASC']);
+
+
+        $statement = $sql->prepareStatementForSqlObject($select);
+        $results = $statement->execute();
+
+        if ($results->isQueryResult()){
+            return $results;
+        }
+        else{
+            return new ApiProblem(404, 'Not found');
+        }
+    }
+
+
+    /**
+     * Method to get structure from API gather
+     * MySQL select
+     *
+     * @param $DrupalStructure_Where
+     * @return ApiProblem
+     */
+    protected function selectOneDataGather($sku){
+        $db = $this->adapter_api;
+
+        $sql = new Sql($db);
+
+        $select = new Select(array('gather'=>'app_he_gather'));
+        $select->columns(array(
+                'id',
+                'project_id',
+                'item_id',
+                'name',
+                'sku',
+                'created_at',
+                'updated_at',
+                'data',
+                'status'
+            )
+        )
+            ->where(['sku' => $sku])
+            ->order('id');
+
+
+        $statement = $sql->prepareStatementForSqlObject($select);
+        $results = $statement->execute();
+
+
+        if(count($results)== 0){
+            return null;
+        }
+        else if ($results->isQueryResult()){
+            return $results;
+        }
+        else{
+            return new ApiProblem(404, 'Not found');
+        }
+    }
+
+
+    /**
+     * Methode to  get datas from couchDB
+     * Get send method
+     *
+     * @param $id
+     * @param $param
+     * @return bool|string|void
+     */
+    protected function get($id, $param)
+    {
+        $path = '';
+
+        // Load config and get central WS URL
+        $config  = $this->config;
+
+
+        if (isset($config['findproduct'])) {
+            if (isset($id)) {
+                $path = '/'.'/store_1_catalog_product_'.$id;
+            }
+
+            if (isset($param)) {
+
+            }
+
+            $ws = $config['findproduct'];
+            $client = new Client($config['findproduct']['uri'] . $path, array(
+                'adapter' => 'Laminas\Http\Client\Adapter\Curl',
+            ));
+            //die("ma".$config['findproduct']['uri'].$path);
+            if (isset($ws['headers'])) {
+                $headers = $ws['headers'];
+                if (isset($ws['username']) && isset($ws['password'])) {
+                    $client->setAuth($ws['username'], $ws['password'], Client::AUTH_BASIC);
+                }
+                $client->setHeaders($headers);
+            }
+
+            $client->setMethod('GET');
+            $result = $client->send();
+
+            $data = Json::decode(Html::filterText($result->getBody()), true);
+
+            if ($result->isSuccess()) {
+                //die($data);
+                return $data;
+            } else {
+                $error = json_decode($result->getBody());
+                $httpCode = ($error->error == 'not_found') ? '404':'503';
+                return new ApiProblem($httpCode, $error);
+
+                return print_r($result->getBody());
+
+            }
+        }
+    }
+
+    /**
+     * Method to make array as associative
+     *
+     * @param $array
+     * @return array
+     */
+    protected function getAssociativeArray($array){
+        $tid ='';
+        $name='';
+
+        foreach($array as $item ){
+            foreach ( $item as $keyn => $value){
+                if($keyn == 'tid'){$tid = $value;}
+                if($keyn == 'name'){ $name= $value; }
+            }
+            $data[$tid] = $name;
+        }
+
+        return $data;
+    }
+}
+
