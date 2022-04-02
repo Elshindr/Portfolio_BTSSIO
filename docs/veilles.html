@@ -126,7 +126,7 @@
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-         <!-- <h2 class="section-title dark-blue-text">Veilles Technologiques</h2>-->
+       
 
           <!-- Each .row is a project -->
           <article class="row">
@@ -181,10 +181,7 @@
             <div class="project-wrapper__text">
               <h3 class="project-wrapper__text-title">Arnaques: le savoir pour mieux réagir</h3>
               <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
+               
               </p>
               <div class="project-wrapper__text-btns">
                 <a
@@ -211,12 +208,13 @@
                   >Outils OSINT : des techniques à connaître pour éviter les arnaques</a
                 >
                 <a href="https://info.signal-arnaques.com/bonnes-pratiques/action-de-groupe/" target="_blank" class="cta-btn text-color-main"
-                >Victimes d’arnaques : comment mener une action collective ?</a
-              >
+                >Victimes d’arnaques : comment mener une action collective ?</a>
               <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/campagnes-messages-escroquerie-usurpant-identite-police-nationale" target="_blank" class="cta-btn text-color-main"
               >Campagnes de messages d’escroquerie usurpant l’identité de la Police et de la Gendarmerie</a
             >
-            <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/coronavirus-covid-19-vigilance-cybersecurite" target="_blank" class="cta-btn text-color-main"
+            <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/coronavirus-covid-19-vigilance-cybersecurite" 
+            target="_blank" 
+            class="cta-btn--Veilles text-color-main"
             >COVID-19 : Appel au renforcement des mesures de vigilance cybersécurité</a
           >
               </div>
@@ -258,66 +256,46 @@
     <!-- END Contact Section -->
 
     <!-- Footer Section -->
-    <footer class="footer">
-      <div class="container">
-        <a href="#hero" class="back-to-top" aria-label="go back to top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
-        <div class="social-links">
-          <a
-            href="https://twitter.com/elshindr"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="twitter"
-          >
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="instagram"
-          >
-            <i class="fa fa-instagram"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="codepen"
-          >
-            <i class="fa fa-codepen"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="linkedin"
-          >
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="github"
-          >
-            <i class="fa fa-github"></i>
-          </a>
-        </div>
-        <hr />
-        <p class="footer__text">
-          &copy; <span id="year"></span> - Template by
-          <a
-            href="https://github.com/AnilSeervi"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Anil Seervi</a
-          >. <br />Made with &hearts;
-        </p>
-      </div>
-    </footer>
+   <script type="text/javascript" src="./javascript/includehtml.js">
+
+function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("./_includes/footer.html");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }      
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    };
+   </script>
+    <div w3-include-html="h1.html"></div> 
+    <script>
+      includeHTML();
+      </script>
+
+
+<?php include "./_includes/footer.php"; ?>
     <!-- END Footer Section -->
+
+
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();

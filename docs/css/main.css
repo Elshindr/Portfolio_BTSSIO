@@ -156,6 +156,13 @@ input[type="text"] #form-control{
     border-image: linear-gradient(135deg,  #835c89 0%, #745be5 100%);
     border-image-slice: 1
 }
+.cta-btn--Veilles{
+    color: #702494;
+    -webkit-text-fill-color: #702494;
+    /*border: 2px solid transparent;
+    border-image: linear-gradient(135deg,  #835c89 0%, #745be5 100%);*/
+    border-image-slice: 1
+}
 .cta-btn--hero {
     color: #702494;
     -webkit-text-fill-color: #702494;
