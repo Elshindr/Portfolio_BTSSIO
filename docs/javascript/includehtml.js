@@ -26,28 +26,3 @@ function includeHTML() {
     }
   }
 };
-
-
-document.getElementById("myHead").innerHTML =
-  "<span id='headerText'>Title</span>"
-  + "<span id='headerSubtext'>Subtitle</span>";
-document.getElementById("myNav").innerHTML =
-  "<ul id='navLinks'>"
-  + "<li><a href='index.html'>Home</a></li>"
-  + "<li><a href='about.html'>About</a>"
-  + "<li><a href='donate.html'>Donate</a></li>"
-  + "</ul>";
-document.getElementById("footer").innerHTML ='<div class="container ">'
-+'<a href="#hero" class="back-to-top" aria-label="go back to top">'
-+'<i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>'
- +'</a><div class="social-links">'
- +'<a href="https://twitter.com/elshindr" target="_blank" rel="noopener noreferrer" aria-label="twitter">'
- +'<i class="fa fa-twitter"></i></a>'
- +'<a href="https://www.linkedin.com/in/noelinemarie/" target="_blank" rel="noopener noreferrer" aria-label="linkedin">'
- +'<i class="fa fa-linkedin"></i></a><a href="https://github.com/Elshindr" target="_blank" rel="noopener noreferrer" aria-label="github">'
- +'<i class="fa fa-github"></i></a></div><hr /><p class="footer__text"> &copy; <span id="year">'
- +'</span> - Template by <a href="https://github.com/AnilSeervi" target="_blank" rel="noopener noreferrer">Anil Seervi</a>. <br />Made with &hearts;</p></div>;';
-  
-  
-  document.getElementById("vvfooter").innerHTML ='<p>merrrrrrrrrrrrrrrrrrrrrrde</p>';
-   
