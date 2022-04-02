@@ -74,22 +74,14 @@ Have fun creating your portfolio on this template!!! -->
      ></script>
 
      <!--include header and footer-->
-     <script
-     src="https://code.jquery.com/jquery-3.3.1.js"
-     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-     crossorigin="anonymous">
- </script>
+     <script type="text/javascript" src="./javascript/includehtml.js"></script>
      
-     <script> 
-      $(function(){
-       $("#header").load("./schema/header.php"); 
-      //  $("#footer").load("./schema/footer.php"); 
-      });
-      </script> 
   </head>
  <body>
     
-   <div id="header"></div>
+    <!----nav section -->
+    <div w3-include-html="./_includes/header.html"></div>
+    <!--- /END nav section -->
 
     <!-- Hero Section -->
     <div id="hero">
@@ -276,31 +268,22 @@ Have fun creating your portfolio on this template!!! -->
     </section>
     <!-- End Projects Section -->
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Get in touch</h2>
-        <div class="contact-wrapper">
-          <p class="contact-wrapper__text">noeline.marie.dev@gmail.com</p>
-          <a href="#" class="cta-btn cta-btn--resume">Call to Action</a>
-        </div>
-      </div>
-    </section>
-    <!-- END Contact Section -->
-  
-      
-  
     <!-- Footer Section -->
+    <script type="text/javascript" src="./javascript/includehtml.js"></script>
+    <div w3-include-html="./_includes/footer.html"></div>
+    <script>
+      includeHTML();
+    </script>
+  <!-- END Footer Section -->
+    
 
-    <div id="footer"> 
-       <?php
-      // at bottom:
-      require('./schema/footer.html');
-      include_once('./schema/footer.html');
-      include('./schema/footer.html');
-      ?>
 
-      <?php include 'footer.php';?> 
-  </div>
-    <!-- END Footer Section -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="./javascript/vanilla-tilt.min.js"></script>
+  <script type="text/javascript" src="./javascript/valtilt.js"></script>
+  </body>
+
 </html>
+?>

@@ -53,17 +53,13 @@
       type="text/javascript"
       src="./javascript/scrollveal.js"
     ></script>
+  <script type="text/javascript" src="./javascript/includehtml.js"></script>
 
+    
   </head>
   <body>
         <!----nav section -->
-        <nav class="navbar fixed-top navbar-dark bg-dark manavbar">
-          <a class="cta-btn text-color-nav" href="./index.html">HOME</a>
-          <a  class="cta-btn text-color-nav" href="./index.html">BTS SIO</a> 
-          <a  class="cta-btn text-color-nav" href="./projetpro.html">Ateliers Pro</a> 
-          <a  class="cta-btn text-color-nav" href="./stage.html">Parcours Pro</a> 
-          <a  class="cta-btn text-color-nav" href="./veilles.html">Veilles</a> 
-        </nav>
+        <div w3-include-html="./_includes/header.html"></div>
         <!--- /END nav section -->
     <!-- Hero Section -->
     <div id="hero">
@@ -172,10 +168,7 @@
               </a>
             </div>
           </article>
-          <!-- /END Project -->
-
-          
-      
+          <!-- /END Project -->    
           <!-- Each .row is a project -->
           <article class="row">
             <div class="project-wrapper__text">
@@ -233,9 +226,6 @@
             </div>
           </article>
           <!-- /END Project -->
-
-           
-       
         </div>
       </div>
     </section>
@@ -254,47 +244,15 @@
       </div>
     </section>
     <!-- END Contact Section -->
-
+  
     <!-- Footer Section -->
-   <script type="text/javascript" src="./javascript/includehtml.js">
-
-function includeHTML() {
-      var z, i, elmnt, file, xhttp;
-      /*loop through a collection of all HTML elements:*/
-      z = document.getElementsByTagName("*");
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("./_includes/footer.html");
-        if (file) {
-          /*make an HTTP request using the attribute value as the file name:*/
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4) {
-              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-              /*remove the attribute, and call this function once more:*/
-              elmnt.removeAttribute("w3-include-html");
-              includeHTML();
-            }
-          }      
-          xhttp.open("GET", file, true);
-          xhttp.send();
-          /*exit the function:*/
-          return;
-        }
-      }
-    };
-   </script>
-    <div w3-include-html="h1.html"></div> 
-    <script>
-      includeHTML();
+      <script type="text/javascript" src="./javascript/includehtml.js"></script>
+      <div w3-include-html="./_includes/footer.html"></div>
+      <script>
+        includeHTML();
       </script>
-
-
-<?php include "./_includes/footer.php"; ?>
     <!-- END Footer Section -->
-
+      
 
 
     <script>
