@@ -24,7 +24,7 @@
     }
     &__text {
       width: 100%;
-      text-align: left;
+      text-align: justify;
       @include respond(tab-land) {
         margin-bottom: 4.8rem;
       }
