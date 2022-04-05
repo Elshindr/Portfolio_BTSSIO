@@ -2,6 +2,9 @@
  * Application "Calculs" v01 (b5 a218)
  * author : Emds
  * date : 24/05/2020
+ * 
+ * Modification : Elshindr
+ * date : 15/10/2020
  */
 using System;
 

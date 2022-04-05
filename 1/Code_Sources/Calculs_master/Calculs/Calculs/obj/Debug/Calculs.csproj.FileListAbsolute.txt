@@ -12,3 +12,10 @@ C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\S1\ressources\Calculs\Calcu
 C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\S1\ressources\Calculs\Calculs\Calculs\obj\Debug\Calculs.csproj.CoreCompileInputs.cache
 C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\S1\ressources\Calculs\Calculs\Calculs\obj\Debug\Calculs.exe
 C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\S1\ressources\Calculs\Calculs\Calculs\obj\Debug\Calculs.pdb
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\obj\Debug\Calculs.csproj.AssemblyReference.cache
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\obj\Debug\Calculs.csproj.CoreCompileInputs.cache
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\obj\Debug\Calculs.exe
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\obj\Debug\Calculs.pdb
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\bin\Debug\Calculs.exe.config
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\bin\Debug\Calculs.exe
+C:\Users\Ydrani\Programmation\Git\Portfolio_BTSSIO\1\Code_Sources\Calculs_master\Calculs\Calculs\bin\Debug\Calculs.pdb
