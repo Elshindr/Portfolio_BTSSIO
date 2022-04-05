@@ -29,6 +29,28 @@ section {
     }
   }
 }
+
+.row-4 {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-template-rows: 5fr;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  padding: 0 1.5rem;
+  @include respond(phone) {
+    padding: 0;
+  }
+  & p + p {
+    margin-top: 1rem;
+  }
+  & span {
+    margin-top: 2rem;
+  }
+}
+
 .container {
   width: 100%;
   padding: 0 1.5rem;
