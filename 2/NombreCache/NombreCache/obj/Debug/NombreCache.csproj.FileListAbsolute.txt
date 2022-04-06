@@ -1,7 +1,0 @@
-G:\test\testVisualStudio2019\NombreCache\NombreCache\bin\Debug\NombreCache.exe.config
-G:\test\testVisualStudio2019\NombreCache\NombreCache\bin\Debug\NombreCache.exe
-G:\test\testVisualStudio2019\NombreCache\NombreCache\bin\Debug\NombreCache.pdb
-G:\test\testVisualStudio2019\NombreCache\NombreCache\obj\Debug\NombreCache.csprojAssemblyReference.cache
-G:\test\testVisualStudio2019\NombreCache\NombreCache\obj\Debug\NombreCache.csproj.CoreCompileInputs.cache
-G:\test\testVisualStudio2019\NombreCache\NombreCache\obj\Debug\NombreCache.exe
-G:\test\testVisualStudio2019\NombreCache\NombreCache\obj\Debug\NombreCache.pdb

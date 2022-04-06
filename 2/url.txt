@@ -1,1 +1,0 @@
-https://github.com/Elshindr/Cshp_Exercices/tree/main/AppConsole/TP2-Denombrement

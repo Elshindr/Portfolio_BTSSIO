@@ -1,0 +1,13 @@
+G:\test\testVisualStudio2019\Denombrements\Denombrements\bin\Debug\Denombrements.exe.config
+G:\test\testVisualStudio2019\Denombrements\Denombrements\bin\Debug\Denombrements.exe
+G:\test\testVisualStudio2019\Denombrements\Denombrements\bin\Debug\Denombrements.pdb
+G:\test\testVisualStudio2019\Denombrements\Denombrements\obj\Debug\Denombrements.csproj.CoreCompileInputs.cache
+G:\test\testVisualStudio2019\Denombrements\Denombrements\obj\Debug\Denombrements.exe
+G:\test\testVisualStudio2019\Denombrements\Denombrements\obj\Debug\Denombrements.pdb
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\bin\Debug\Denombrements.exe.config
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\bin\Debug\Denombrements.exe
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\bin\Debug\Denombrements.pdb
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\obj\Debug\Denombrements.csprojAssemblyReference.cache
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\obj\Debug\Denombrements.csproj.CoreCompileInputs.cache
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\obj\Debug\Denombrements.exe
+G:\Mes cours\CNED POITIERS\productions\cned\BTS SIO 2020\B1\B1_2 SLAM\seq1\seance2\OA\fichiers\Denombrements\Denombrements\obj\Debug\Denombrements.pdb
