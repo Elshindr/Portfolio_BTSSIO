@@ -51,6 +51,27 @@ section {
   }
 }
 
+.row-3 {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows: 5fr;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  padding: 1.5rem;
+  @include respond(phone) {
+    padding: 0;
+  }
+  & p + p {
+    margin-top: 1rem;
+  }
+  & span {
+    margin-top: 2rem;
+  }
+}
+
 .container {
   width: 100%;
   padding: 0 1.5rem;

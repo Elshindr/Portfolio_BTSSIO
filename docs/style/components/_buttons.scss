@@ -98,7 +98,7 @@
   }
 
   &:hover {
-    color: #9d0fbc;
+    color: $purple_color ;
     text-decoration: none;
     box-shadow: none;
     @include respond(phone) {
