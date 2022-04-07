@@ -45,16 +45,25 @@ Have fun creating your portfolio on this template!!! -->
   <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
   <meta property="twitter:image" content="https://anilseervi.vercel.app/assets/devfolio.png" />
 
-  <!-- link tags -->
+  <!-- link tags 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/main.css" />
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="./css/main.css" />
+ 
+ 
   <script type="text/javascript" src="./javascript/scrollreveal.min.js"></script>
   <script type="text/javascript" src="./javascript/scrollveal.js"></script>
-
+  <link href="bootstrap/js/bootstrap-modal.js" rel="stylesheet" media="screen">
   <!--include header and footer-->
   <script type="text/javascript" src="./javascript/includehtml.js"></script>
+
+  
 </head>
 
 <body>
@@ -141,7 +150,7 @@ Have fun creating your portfolio on this template!!! -->
   <!-- TAbleau Section -->
   <div id="hero">
     <section class="container">
-      <h1 class="center-title" > <span class="text-color-main name">Tableau de Synthèse</span> </h1>
+      <h1 class="center-title-synthese" > <span class="text-color-main name">Tableau de Synthèse</span> </h1>
       <br />
       <h2> Ainsi, voici le tableau de synthèse récapitulant l’ensemble des réalisations qui seront présentées dans ce portfolio</h2>
       <br />
@@ -160,49 +169,113 @@ Have fun creating your portfolio on this template!!! -->
       <h2 class="section-title">Réalisations 1ere Année</h2>
     </div>
   </section>
+
   <!--_______________________ END A1 Section _____________________--> 
   <!--Projects Section-->
   <section id="projects">
     <div class="container">
       <div class="project-wrapper">
   
-        <!-- Each .card is a project -->
+       
         <article class="row-4">
-          <div class="card" style="width: 30rem;">
-            <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
+          <!-- Each .card is a project -->
+
+          <!-- card 1 -->
+          <div class="card">
             <h5 class="card-title">Prise en Charge Incident d’une Application Console C#</h5>
+            <img class="card-img-top" src="./assets/Cshp_Logo.png" alt="Card image cap">
+          
             <div class="card-body">
-              <p class="card-text card-text-cadr">TP
-                <span class="card-text card-text-desc">Rechercher l'origine et les causes de différents bugs d'une'application client</span>
-              </p>
-              <p class="card-text card-text-tech">Visual Studio || C# || Outils Débogages</p>
-              <p class="card-text card-text-comp">
-                <ul>
-                <il> B1-2: Répondre aux incidents et aux demandes d’assistance et d’évolution</p></il>
-              </ul>
+             
+              <p class="card-text card-text-tech text-color-main">Visual Studio || C# || Outils Débogages</p>
               <a href="https://github.com/Elshindr/Portfolio_BTSSIO/tree/main/1/Code_Sources" class="btn btn-success" target="_blank" >Code Source</a>
               <a href="https://github.com/Elshindr/Portfolio_BTSSIO/tree/main/1" class="btn btn-primary" target="_blank">Documentations</a>
               <a href="https://github.com/Elshindr/Portfolio_BTSSIO/blob/main/1/RapportActivit%C3%A9_1.pdf" target="_blank" style="background-color:#970984; color:#ffffff" class="btn ">Rapport d'activité</a>
+             
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Description
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <p class="card-text card-text-cadr ">TP:
+                          Rechercher l'origine et les causes de différents bugs d'une'application client
+                        </p>
+                      </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                       Compétences couvertes
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <p class="card-text card-text-comp">
+                        B1-2: Répondre aux incidents et aux demandes d’assistance et d’évolution 
+                      </p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card" style="width: 30rem;">
-            <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
+       
+          <!-- End card 1  -->
+         
+
+          <!-- card 2 -->
+          <div class="card" >
             <h5 class="card-title">Revue de code et Pull Request d’une Application Console C#</h5>
+            <img class="card-img-top" src="./assets/Cshp_Logo.png" alt="Card image cap">
+          
             <div class="card-body">
-              <p class="card-text card-text-cadr">TP
-                <span class="card-text card-text-desc">Rechercher les erreurs de présentation de code et soumettre ses propositions via une branche annexe sur Github</span>
-              </p>
-              <p class="card-text card-text-tech">Visual Studio || C# || Régles communes de présentation de code</p>
-              <p class="card-text card-text-comp">
-                <ul>
-                <il> B1-2: Répondre aux incidents et aux demandes d’assistance et d’évolution</p></il>
-              </ul>
-              <a href="https://github.com/Elshindr/Portfolio_BTSSIO/tree/main/2/Code_Sources/Denombrements-master/Denombrements" class="btn btn-success" target="_blank" >Code Source</a>
-              <a href="https://github.com/Elshindr/Portfolio_BTSSIO/tree/main/2" class="btn btn-primary" target="_blank">Documentations</a>
-              <a href="https://github.com/Elshindr/Portfolio_BTSSIO/blob/main/2/RapportActivit%C3%A9_2.pdf" target="_blank" style="background-color:#970984; color:#ffffff" class="btn ">Rapport d'activité</a>
+              <p class="card-text card-text-tech text-color-main">Visual Studio || C# || Régles présentation de code</p>
+              <div class="card-btn-content">
+                <a href="https://github.com/Elshindr/Portfolio_BTSSIO/tree/main/2/Code_Sources/Denombrements-master/Denombrements" class="btn btn-success" target="_blank" >Code Source</a>
+                <a href="https://github.com/Elshindr/Portfolio_BTSSIO/tree/main/2" class="btn btn-primary" target="_blank">Documentations</a>
+                <a href="https://github.com/Elshindr/Portfolio_BTSSIO/blob/main/2/RapportActivit%C3%A9_2.pdf" target="_blank" style="background-color:#970984; color:#ffffff" class="btn ">Rapport d'activité</a>
+              </div>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecadr11" aria-expanded="false" aria-controls="flush-collapsecadr11">
+                      Description
+                  </button>
+                </h2>
+                <div id="flush-collapsecadr11" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <p class="card-text card-text-cadr">TP:
+                      Recherche d'erreurs codage et soumettre ses propositions via une branche annexe sur Github
+                      </p>
+                    </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseComp11" aria-expanded="false" aria-controls="flush-collapseComp11">
+                     Compétences couvertes
+                  </button>
+                </h2>
+                <div id="flush-collapseComp11" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p class="card-text card-text-comp">
+                      B1-2: Répondre aux incidents et aux demandes d’assistance et d’évolution
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
-          <div class="card" style="width: 30rem;">
+          <!-- Each .card 2 -->
+
+          <!-- Each .card is a project -->
+          <div class="card">
             <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -211,7 +284,9 @@ Have fun creating your portfolio on this template!!! -->
               <a href="#" class="btn btn-primary">+</a>
             </div>
           </div>
-          <div class="card" style="width: 30rem;">
+           <!-- Each .card is a project -->
+           <!-- Each .card is a project -->
+          <div class="card" >
             <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -221,11 +296,11 @@ Have fun creating your portfolio on this template!!! -->
             </div>
           </div>
         </article>
-        <!-- /END Project -->
+        <!-- Each .card is a project -->
       </br></br>
         <!-- Each .card is a project -->
         <article class="row-4">
-          <div class="card" style="width: 30rem;">
+          <div class="card" >
             <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -234,7 +309,7 @@ Have fun creating your portfolio on this template!!! -->
               <a href="#" class="btn btn-primary">+</a>
             </div>
           </div>
-          <div class="card" style="width: 30rem;">
+          <div class="card" >
             <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -243,7 +318,7 @@ Have fun creating your portfolio on this template!!! -->
               <a href="#" class="btn btn-primary">+</a>
             </div>
           </div>
-          <div class="card" style="width: 30rem;">
+          <div class="card" >
             <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -252,7 +327,7 @@ Have fun creating your portfolio on this template!!! -->
               <a href="#" class="btn btn-primary">+</a>
             </div>
           </div>
-          <div class="card" style="width: 30rem;">
+          <div class="card">
             <img class="card-img-top" src="./assets/Illustration_night.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -392,7 +467,6 @@ Have fun creating your portfolio on this template!!! -->
     includeHTML();
   </script>
   <!-- END Footer Section -->
-
 
 
   <script>
