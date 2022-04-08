@@ -86,3 +86,23 @@ ul{
 .accordion{
   padding-top: 1em;
 }
+
+
+
+.card-grad {background-image: linear-gradient(-20deg,  $secondary-color 0%,  #16a085 100%);}
+.card-grad {
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .card-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
