@@ -35,11 +35,19 @@ ul{
   text-align: center;
   vertical-align: middle;
 }
-.card{
+.card-par{
   width: 30rem;
-  height:68em;
+  //height:68em;
   text-align: center;
 }
+
+.card-veille_pres{
+  width: 100%;
+  text-align: justify;
+  border: lightslategray 1px solid;
+  margin-bottom: 1em;
+}
+
 .card-veille{
   width: 20em;
   height: 17em;
@@ -61,11 +69,11 @@ ul{
   font-size : 1.5em; 
   color:  $purple_color;
 }
-.card-text{
+.card-text-des{
   height: 4em;
 
 }
-.card-text-cadr{
+.card-text-cadr-{
   height: 8em;
 
 }
@@ -89,7 +97,6 @@ ul{
 
 
 
-.card-grad {background-image: linear-gradient(-20deg,  $secondary-color 0%,  #16a085 100%);}
 .card-grad {
    transition: 0.5s;
    background-size: 200% auto;
