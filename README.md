@@ -6,11 +6,7 @@ Le BTS SIO permet d'effectuer deux stages lors de la période de formation, de 4
 E4 – Évaluation type
 Conseils
 
-Il est recommandé d’avoir consulté toutes les informations mises à votre disposition dans la présentation de cette épreuve et dans les ressources avant de soumettre votre dossier à l’évaluation.
 
-Modalités et consignes
-
-Cette évaluation type consiste à préparer tous les éléments nécessaires pour l'épreuve E4 et à vous entraîner à la première partie de cette épreuve.
 
 Vous devez renseigner correctement votre portfolio, en particulier avec toutes les situations professionnelles vécues en stage, dans le cadre des ateliers de professionnalisation de votre parcours et éventuellement dans le cadre des séquences de formation, pour des missions pertinentes (afin de vous assurer que vous couvrez bien toutes les compétences du bloc 1).
 Situations professionnelles
@@ -52,15 +48,6 @@ Tableau de synthèse
     Couverture totale des compétences du bloc 1.
 
 En cas de non-couverture totale des compétences du bloc 1, le correcteur devra rappeler à l'étudiant qu'il risque une lourde pénalité à l'examen.
-Vidéo de présentation du parcours (10 minutes)
-(6 points)
 
-    Son et image de qualité.
-    Durée respectée.
-    Explications claires, présentées à un rythme correct.
-    Illustrations explicites pour aider à la compréhension.
-    Présentation de l'ensemble du parcours de façon cohérente.
-    Démonstration de la couverture des compétences du bloc 1.
 
-exemple type fourni
-https://leo-delsart.fr/Portefeuille-Competences
+
