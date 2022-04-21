@@ -7,7 +7,7 @@ function validateForm() {
         return true;
     }
     else {
-        alert ("Login or password was unsuccessful, please check informations from admin");
+        alert ("Login or password was unsuccessful, please contact admin");
         return false;
     }
 }
