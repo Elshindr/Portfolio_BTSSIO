@@ -59,13 +59,16 @@ ul{
 
 
 .card-par{
-  width: 35rem;
+  width: 50rem;
   max-height: fit-content;
   text-align: center;
 }
 
 .card-img-top{
-  width: 100%;
+  display: block;
+  margin : auto;
+  width: 80%;
+ 
 }
 .card-footer{
   margin-top: 2em;
@@ -101,8 +104,28 @@ ul{
  }
 
 
+ul{
+  font-size:1.1em;
+  text-align: left;
+}
 
+.cardlin1{
+  list-style: none;
+  font-weight: bold;
+}
+.cardlin2{
+list-style: none;
+  margin-left: 2em;
+}
 
+ul .cardlin2::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #00b09b; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -2em; /* Also needed for space (tweak if needed) */
+}
 
 .card-grad {
    transition: 0.5s;
