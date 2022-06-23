@@ -32,11 +32,7 @@ ul{
   font-size: 5.6rem;
   font-weight: 700;
   margin-bottom: 3.2rem;
-  text-align: center;
-  vertical-align: middle;
 }
-
-
 .card-veille_pres{
   width: 100%;
   text-align: justify;
@@ -55,21 +51,17 @@ ul{
   width: 100%;
   font-size: 1.5em;
 }
-
-
-
 .card-par{
   width: 50rem;
   max-height: fit-content;
   text-align: center;
 }
-
 .card-img-top{
   display: block;
-  margin : auto;
-  width: 80%;
- 
+  margin: 10% auto;
+  width: 45%;
 }
+
 .card-footer{
   margin-top: 2em;
 }
@@ -82,7 +74,6 @@ ul{
 }
 .card-text-des{
   height: fit-content;
-
 }
 .card-text-cadr-{
   height: fit-content;
